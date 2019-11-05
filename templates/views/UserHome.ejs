@@ -1,0 +1,180 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Task-Manager-App</title>
+</head>
+<body>
+    <h1>Welcome User</h1>
+
+   <a href="#">Home</a> <br>
+   <a href="profile">View Profile</a> <br>
+   <a href="updateProfile">Update Profile</a> <br>
+   <a href="addTask">ADD TASK</a> <br>
+   <a href="manageTask">MANAGE TASK</a> <br>
+   <a href="allTask">ALL TASK</a> <br>
+   <a href="logout">Logout</a> <br>
+
+</body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Task-Manager</title>   
+    
+    <link rel='icon' href='/background/logo.jpg' />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/customCSS/home.css">
+    <link rel="stylesheet" href="/customCSS/common.css"> 
+  </head>
+
+<body>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#" style="color: #fed136;"><img src="/background/logo.svg" width="30" height="30" class="d-inline-block align-top" alt=""> Task-Manager</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+            <a class="nav-link active" href="home">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="addTask">Add Task</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="allTask">Your Tasks</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="manageTask">Manage Task</a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="profile">Profile</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="updateProfile">Update Profile</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="logoutConfirmation">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav> 
+    
+    <header>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style="background-image: url('/background/1.jpg')">
+              <div class="carousel-caption  d-md-block">
+                <span  class="h3 text-dark shadow-lg bg-white rounded" style="font-family: 'Kaushan Script';">&nbsp Add Task &nbsp</span>
+                <p class="font-weight-bold" >Users can easily add tasks</p>
+              </div>
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('/background/2.jpg')">
+              <div class="carousel-caption  d-md-block">
+                <span  class="h3 text-dark shadow-lg bg-white rounded" style="font-family: 'Kaushan Script';">&nbsp Manage Tasks &nbsp</span>
+                <p class="font-weight-bold">Users can easily manage tasks</p>
+              </div>
+            </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('/background/3.jpg')">
+              <div class="carousel-caption  d-md-block">
+                 <span  class="h3 text-dark shadow-lg bg-white rounded" style="font-family: 'Kaushan Script';">&nbsp See Tasks &nbsp</span>
+                <p class="font-weight-bold" >Users can see all their tasks</p>
+              </div>
+            </div>
+            <!-- Slide Four - Set the background image for this slide in the line below -->
+            <div class="carousel-item" style="background-image: url('/background/4.jpg')">
+              <div class="carousel-caption  d-md-block">
+                 <span  class="h3 text-dark shadow-lg bg-white rounded" style="font-family: 'Kaushan Script';">&nbsp All in One &nbsp</span>
+                <p class="font-weight-bold" >One place to manage all your tasks</p>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </header>
+  
+    <div class="container">
+  
+        <h1 class="h1 mt-4 font-weight-normal text-center shadow-lg p-2 rounded bg-dark text-light" style="font-family: 'Kaushan Script';">Welcome to Task Manager</h1><br>
+    
+        
+        <!-- Features Section -->
+        <div class="row">
+          <div class="col-lg-6">
+            <h2 class="shadow-lg bg-white rounded text-center p-1" style="font-family: 'Kaushan Script';">Task Manager Features:</h2>
+            <p class="font-weight-light" >Using this task manager, users can perform various operation like: </p>
+            <ul>
+              <li>
+                <strong class="shadow bg-white rounded p-1">Adding Tasks</strong>
+              </li>
+              <li class="mt-2">
+                <strong class="shadow bg-white rounded p-1">Removing Tasks</strong>
+              </li>
+              <li class="mt-2">
+                <strong class="shadow bg-white rounded p-1">Managing Tasks</strong>
+              </li>
+              <li class="mt-2">
+                <strong class="shadow bg-white rounded p-1">See All Tasks</strong>
+              </li>
+            </ul>
+            <p class="text-justify font-weight-light">This website is fully responsive so you must know that this website will look great on any device, whether it's a phone, tablet, or desktop the website will remain responsive!
+               This website is user friendly. Simple navigation provided to all the users throughout the website. Incase of any query, there is a 'About' section where user can simply mail us.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <img class="img-fluid rounded shadow-lg bg-white rounded p-2" src="/background/aboutus.jpg" alt="">
+          </div>
+        </div>
+        <!-- /.row -->     
+        
+     
+        <hr>
+  
+        <!-- Call to Action Section -->
+        <div class="row mb-4">
+          <div class="col-md-8 shadow-lg bg-white rounded pt-2">
+            <p class="font-weight-light" >Any Problem ? Feel free to contact us and we will tell you all the details and overall processing of your desired products. We don't share your personal details with anyone :)</p>
+          </div>
+          <div class="col-md-4">
+            <a class="small btn btn-lg btn-dark btn-block font-weight-bold disabled" href="#">Mail us on gouravhammad477@gmail.com</a>
+          </div>
+        </div>
+    
+      </div>
+      <!-- /.container -->
+           
+       
+    <footer class="py-4 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Task Manager 2019</p>
+      </div>
+    </footer>
+    
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+      
+</body>
+</html>
+    

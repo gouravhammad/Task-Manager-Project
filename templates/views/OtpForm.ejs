@@ -1,0 +1,107 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>Task-Manager-App</title>
+    </head>
+<body>
+    <h1>OTP FORM</h1>
+      <h5>An OTP was send to <%=email%> , Please enter that OTP to verify your account!</h5>
+       
+        <form action="OTPVerify" method="POST">
+             Password    : <input type="number" name="otpNumber" > <br>
+            <input type="submit" value="Verify">
+        </form>
+
+    <a href="resendOTP">Resend OTP</a> <br><br>
+
+    <a href="login">Login</a> <br>
+    <a href="signup">Signup</a> <br>
+    <a href="about">About</a> <br>
+    <a href="/">Home</a> <br>
+</body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Task-Manager</title>   
+    
+    <link rel='icon' href='/background/logo.jpg' />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/customCSS/login.css">
+    <link rel="stylesheet" href="/customCSS/common.css"> 
+  </head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#" style="color: #fed136;"><img src="/background/logo.svg" width="30" height="30" class="d-inline-block align-top" alt=""> Task-Manager</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="signup">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="about">About</a>
+                    </li>
+                </ul>
+            </div>
+    </nav> 
+    
+    <div class="container">
+        <br><br><br>
+        <form action="OTPVerify" method="POST" class="text-center form-signin shadow-lg p-3 bg-white rounded">
+            <h1 class="h1 mb-3 font-weight-normal" style="font-family: 'Kaushan Script';">OTP Verification</h1>
+            <p class="text-justify mt-4 mb-4 text-center font-weight-bold">An OTP was send to <%=email%> , Please enter that OTP to verify your account!</p>
+            <input type="number" name="otpNumber" placeholder="@otp" class="form-control shadow bg-white rounded" />
+
+            <button class="btn mt-2 btn-lg btn-success btn-block" type="submit">Verify</button>
+
+            <div class="checkbox mb-3 text-left">
+                <br>
+                <label>
+                    <a href="resendOTP">Resend OTP ? Click here!</a>
+                </label>
+            </div>
+
+            <p class="mt-3 mb-2 text-muted">&copy; 2019</p>
+          </form>  
+    </div>
+   
+     
+    <footer class="py-4  mt-3 bg-dark">
+        <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Task Manager 2019</p>
+        </div>
+    </footer>
+
+    <% if(alert){ %>
+        <script src="/js/AlertScript.js"></script>
+        <script>
+                Swal.fire({
+                  type:"info",
+                  allowOutsideClick: false,
+                  title:"New OTP Send",
+                  text:"New OTP has been send to your email"
+                });
+        </script>  
+   <%  } %>
+    
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+      
+</body>
+</html>

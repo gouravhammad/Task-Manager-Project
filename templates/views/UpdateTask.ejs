@@ -1,0 +1,137 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Task-Manager-App</title>
+</head> 
+<body>
+    <h1>UPDATE TASK</h1>
+
+    <form action="saveAddTaskChanges" method="POST">
+        <input type="hidden" name="originalTitle" value='<%=original.title%>'>
+        <input type="hidden" name="originalDate" value='<%=original.dateCreated%>'>
+        <input type="hidden" name="originalStatus" value='<%=original.status%>'>
+        Title          : <input type="text" name="title" placeholder="@Task" value='<%=task.title%>'> <span> <%=error.title%> <%=error.reg%></span> <br>
+        Description    : <input type="text" name="description" placeholder="@Description" value='<%=task.description%>'> <span> <%=error.description%></span> <br>
+        <input type="submit" value="UPDATE">
+    </form>
+
+   <a href="home">Home</a> <br>
+   <a href="profile">View Profile</a> <br>
+   <a href="updateProfile">Update Profile</a> <br>
+   <a href="addTask">ADD TASK</a> <br>
+   <a href="manageTask">MANAGE TASK</a> <br>
+   <a href="allTask">ALL TASK</a> <br>
+   <a href="logout">Logout</a> <br>
+
+</body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Task-Manager</title>   
+    
+    <link rel='icon' href='/background/logo.jpg' />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/customCSS/signup.css">
+    <link rel="stylesheet" href="/customCSS/common.css"> 
+  </head>
+
+<body>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#" style="color: #fed136;"><img src="/background/logo.svg" width="30" height="30" class="d-inline-block align-top" alt=""> Task-Manager</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                        <a class="nav-link" href="home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="addTask">Add Task</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="allTask">Your Tasks</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="manageTask">Manage Task</a>
+                        </li>
+                        <li class="nav-item">
+                         <a class="nav-link" href="profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="updateProfile">Update Profile</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="logoutConfirmation">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+        </nav> 
+    
+    <div class="container">
+        <br><br>
+            <div class="container my-form">
+              <div class="row justify-content-center">
+           		 <div class="col-md-8">
+                    <div class="card shadow-lg p-1 bg-white rounded">
+                        <div class="card-header h2 text-center">
+                        	<img class="mb-2" src="/background/logo2.svg" alt="" width="80" height="80">
+        					  <h1 class="h1 mb-2 font-weight-normal" style="font-family: 'Kaushan Script';">Update Task</h1>
+                        </div>
+                        <div class="card-body">
+
+                            <form action="saveAddTaskChanges" method="POST">
+                                
+                                <input type="hidden" name="originalTitle" value='<%=original.title%>'>
+                                <input type="hidden" name="originalDate" value='<%=original.dateCreated%>'>
+                                <input type="hidden" name="originalStatus" value='<%=original.status%>'>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Title</label>
+                                    <div class="col-md-6">
+                                            <input type="text" name="title" placeholder="@task" value='<%=task.title%>'' class="form-control"/>
+                                        <span class="text-center small"><%=error.title%> <%=error.reg%></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Description</label>
+                                    <div class="col-md-6">
+                                            <textarea name="description" placeholder="@description" class="form-control" rows="3" cols="35" maxlength="100" ><%=task.description%></textarea>
+                                        <span class="text-center small"><%=error.description%></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right"></label>
+                                     <div class="col-md-6">
+                                       <button type="submit" class="btn btn-success btn-block">Save Changes</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <footer class="py-4 bg-dark">
+        <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Task Manager 2019</p>
+        </div>
+    </footer>
+    
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+      
+</body>
+</html>
+    

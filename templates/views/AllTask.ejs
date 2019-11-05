@@ -1,0 +1,215 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Task-Manager-App</title>
+</head>
+<body>
+    <h1>ALL TASK</h1>
+
+    <h4>ON GOING TASKS:</h4>
+    <table>
+            <% for(var i=0; i < data.length; i++)
+               {
+                  if(data[i].status === 'false')
+                  {
+            %>
+                    <tr>
+                        <td><%= data[i].email %></td>
+                        <td><%= data[i].title %></td>
+                        <td><%= data[i].status %></td>
+                        <td><%= data[i].description %></td>
+                        <td><%= data[i].dateCreated %></td>
+                    </tr>
+            <%    } 
+               }
+            %>
+        </table>
+
+    <h4>COMPLETED TASKS:</h4>
+
+    <table>
+        <% for(var i=0; i < data.length; i++)
+           {
+              if(data[i].status === 'true')
+              {
+        %>
+                <tr>
+                    <td><%= data[i].email %></td>
+                    <td><%= data[i].title %></td>
+                    <td><%= data[i].status %></td>
+                    <td><%= data[i].description %></td>
+                    <td><%= data[i].dateCreated %></td>
+                </tr>
+        <%    } 
+           }
+        %>
+    </table>
+
+    <a href="home">Home</a> <br>
+   <a href="profile">View Profile</a> <br>
+   <a href="updateProfile">Update Profile</a> <br>
+   <a href="addTask">ADD TASK</a> <br>
+   <a href="manageTask">MANAGE TASK</a> <br>
+   <a href="#">ALL TASK</a> <br>
+   <a href="logout">Logout</a> <br>
+
+</body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Task-Manager</title>   
+    
+    <link rel='icon' href='/background/logo.jpg' />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/customCSS/common.css"> 
+  </head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#" style="color: #fed136;"><img src="/background/logo.svg" width="30" height="30" class="d-inline-block align-top" alt=""> Task-Manager</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                    <a class="nav-link" href="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="addTask">Add Task</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" href="#">Your Tasks</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="manageTask">Manage Task</a>
+                    </li>
+                    <li class="nav-item">
+                     <a class="nav-link" href="profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="updateProfile">Update Profile</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="logoutConfirmation">Logout</a>
+                    </li>
+                </ul>
+            </div>
+    </nav> 
+    
+<div class="container">
+    <div class="row">
+        <div class="col ">
+            <br><br><br>
+            <h1 class="h1 mb-3 font-weight-normal text-center" style="font-family: 'Kaushan Script';">Current Tasks</h1>
+            <div class="table-responsive-xl  shadow-lg p-1 bg-white rounded">
+                    <table class="table table-striped ">
+                            <thead class="thead-dark">
+                            <tr class="small text-center">
+                                <th class="align-top"  scope="col">S.No.</th>
+                                <th class="align-top"  scope="col">Title</th>
+                                <th class="align-top"  scope="col">Description</th>
+                                <th class="align-top"  scope="col">Date Created</th>
+                            </tr>
+                            </thead>
+                            
+                            <tbody>
+                                <% count = 0; %>
+                                <% for(var i=0; i < data.length; i++)
+                                {
+                                    if(data[i].status === 'false')
+                                    {
+                                        count++ 
+                                %>
+                                    <tr class="small font-weight-bold text-center ">
+                                        <td class="align-middle"><%= count%></td>
+                                        <td class="align-middle"><%= data[i].title %></td>
+                                        <td class="align-middle"><%= data[i].description %></td>
+                                        <td class="align-middle"><%= (data[i].dateCreated).toString().split('GMT+')[0] %></td>
+                                    </tr>
+                                <%    }    
+                                }
+
+                                if(count === 0)
+                                {
+                                %>
+                                   <tr class="small font-weight-bold text-center ">
+                                        <td colspan="4">You haven't added any Task!</td>
+                                   </tr>
+                                <%    
+                                }
+                                %>
+                            </tbody>
+                        </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+            <div class="col">
+            <br><br>
+                <h1 class="h1 mb-3 font-weight-normal text-center" style="font-family: 'Kaushan Script';">Completed Tasks</h1>
+                <div class="table-responsive-xl  shadow-lg p-1 bg-white rounded">
+                    <table class="table table-striped ">
+                        <thead class="thead-dark">
+                        <tr class="small text-center">
+                            <th class="align-top"  scope="col">S.No.</th>
+                            <th class="align-top"  scope="col">Title</th>
+                            <th class="align-top"  scope="col">Description</th>
+                            <th class="align-top"  scope="col">Date Created</th>
+                        </tr>
+                        </thead>
+                        
+                        <tbody>
+                                <% count = 0; %>
+                                <% for(var i=0; i < data.length; i++)
+                                {
+                                    if(data[i].status === 'true')
+                                    {
+                                        count++ 
+                                %>
+                                    <tr class="small font-weight-bold text-center ">
+                                        <td class="align-middle"><%= count%></td>
+                                        <td class="align-middle"><%= data[i].title %></td>
+                                        <td class="align-middle"><%= data[i].description %></td>
+                                        <td class="align-middle"><%= (data[i].dateCreated).toString().split('GMT+')[0] %></td>
+                                    </tr>
+                                <%    }    
+                                }
+
+                                if(count === 0)
+                                {
+                                %>
+                                   <tr class="small font-weight-bold text-center ">
+                                        <td colspan="4">You haven't completed any Task!</td>
+                                   </tr>
+                                <%    
+                                }
+                                %>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</div>    
+       
+    <br>
+    <footer class="py-4 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Task Manager 2019</p>
+      </div>
+    </footer>
+    
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+      
+</body>
+</html>
+    

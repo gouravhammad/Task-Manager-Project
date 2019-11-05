@@ -1,0 +1,153 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>Task-Manager-App</title>
+    </head>
+<body>
+    <h1>USER SIGNUP</h1>
+        <form action="saveUser" method="POST">
+             Email       : <input type="email" name="userEmail" placeholder="@email" value='<%=user.email%>'> <span> <%=error.emailError%> <%=regError%></span> <br>
+             Username    : <input type="text" name="userName" placeholder="@username" value='<%=user.name%>'> <span> <%=error.nameError%></span> <br>
+             Password    : <input type="password" name="userPassword" placeholder="@password" value='<%=user.password%>'> <span> <%=error.passwordError%></span> <br>
+             Gender      : Male<input type="radio" name="gender" value="Male" checked>
+                           Female<input type="radio" name="gender" value="Female">
+                           Other<input type="radio" name="gender" value="Other"> <br>
+            <input type="submit" value="Register">
+        </form>
+    
+    <a href="login">Login</a> <br>
+    <a href="#">Signup</a> <br>
+    <a href="about">About</a> <br>
+    <a href="/">Home</a> <br>
+</body>
+</html> -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Task-Manager</title>   
+    
+    <link rel='icon' href='/background/logo.jpg' />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/customCSS/signup.css">
+    <link rel="stylesheet" href="/customCSS/common.css"> 
+  </head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#" style="color: #fed136;"><img src="/background/logo.svg" width="30" height="30" class="d-inline-block align-top" alt=""> Task-Manager</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" href="#">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="about">About</a>
+                    </li>
+                </ul>
+            </div>
+    </nav> 
+    
+    <div class="container">
+        <br><br>
+            <div class="container my-form">
+              <div class="row justify-content-center">
+           		 <div class="col-md-8">
+                    <div class="card shadow-lg p-1 bg-white rounded">
+                        <div class="card-header h2 text-center">
+                        	<img class="mb-2" src="/background/logo.svg" alt="" width="80" height="80">
+        					  <h1 class="h1 mb-2 font-weight-normal" style="font-family: 'Kaushan Script';">User Signup</h1>
+                        </div>
+                        <div class="card-body">
+
+                            <form action="saveUser" method="POST">
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Email</label>
+                                    <div class="col-md-6">
+                                      <input type="email" name="userEmail" placeholder="@email" value='<%=user.email%>' class="form-control"/>
+                                        <span class="text-center small"><%=error.emailError%> <%=regError%></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Username</label>
+                                    <div class="col-md-6">
+                                      <input type="text" name="userName" placeholder="@username" value='<%=user.name%>' class="form-control"/>
+                                        <span class="text-center small"><%=error.nameError%></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Password</label>
+                                    <div class="col-md-6">
+                                      <input type="password" name="userPassword" placeholder="@password" value='<%=user.password%>' class="form-control"/>
+                                        <span class="text-center small"><%=error.passwordError%></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Gender</label>
+                                    <div class="col-md-6 mt-2">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" value="Male" checked>
+                                            <label class="form-check-label">Male</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" value="Female">
+                                            <label class="form-check-label">Female</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                             <input class="form-check-input" type="radio" name="gender" value="Other">
+                                            <label class="form-check-label">Other</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right"></label>
+                                     <div class="col-md-6">
+                                       <button type="submit" class="btn btn-success btn-block">Register</button>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right"></label>
+                                      <div class="col-md-6"> 
+                                        <a href="login">Already have an account ? Click here!</a>
+                                      </div>   
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <footer class="py-4 bg-dark">
+        <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Task Manager 2019</p>
+        </div>
+    </footer>
+    
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+      
+</body>
+</html>
+    
